@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERMANA DESIGN — Personal Brand</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Noto Serif', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .animate-shimmer { animation: shimmer 1.8s infinite; }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+  </style>
+</head>
+<body class="bg-[#f8f9ff] font-sans text-[#0b1c30] antialiased min-h-screen flex flex-col">
+  <!-- Sticky Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#f8f9ff]/85 backdrop-blur-xl border-b border-[#0b1c30]/5 shadow-sm">
+    <div class="h-20 max-w-[640px] mx-auto px-4 flex items-center justify-between">
+      <a href="#home" onclick="showTab('home')" class="flex items-center gap-3">
+        <img src="https://cdn.discordapp.com/attachments/1536269374518722621/1536269750206726244/logoderii.png?ex=6a7aca32&is=6a7978b2&hm=fee27e566f5d09df64aa415622a603984804f4e64923eadf99375ce4bb696205&" alt="Logo" class="h-8 w-auto object-contain" />
+        <span class="font-serif font-semibold text-lg text-[#0b1c30] hidden sm:inline-block">PERMANA DESIGN</span>
+      </a>
+      <nav class="flex items-center gap-6">
+        <button id="nav-home" onclick="showTab('home')" class="text-xs font-semibold text-[#0051d5] underline underline-offset-8">Home</button>
+        <button id="nav-about" onclick="showTab('about')" class="text-xs font-semibold text-[#45464d] hover:text-[#0b1c30]">About Me</button>
+        <button id="nav-links" onclick="showTab('links')" class="text-xs font-semibold text-[#45464d] hover:text-[#0b1c30]">Links</button>
+      </nav>
+      <img src="https://cdn.discordapp.com/attachments/1536269374518722621/1536269995355545680/IMG_3390.png?ex=6a7aca6d&is=6a7978ed&hm=1b6f6ee0b29701ca934fbf119d00ca8a6d888de9d7878e24f075f0dc810eef03" alt="Profile" onclick="showTab('about')" class="w-10 h-10 rounded-full object-cover border border-[#c6c6cd] cursor-pointer" />
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="pt-24 pb-16 px-4 max-w-[640px] mx-auto flex-grow w-full">
+    <!-- Home Section -->
+    <section id="sec-home" class="page-section active animate-fadeIn">
+      <div class="relative w-full min-h-[50vh] flex flex-col items-center justify-center p-8 bg-gradient-to-b from-[#f8f9ff] to-[#eff4ff] rounded-[2rem] shadow-sm border border-[#0b1c30]/5 text-center md:text-left">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <img src="https://cdn.discordapp.com/attachments/1536269374518722621/1536269995355545680/IMG_3390.png?ex=6a7aca6d&is=6a7978ed&hm=1b6f6ee0b29701ca934fbf119d00ca8a6d888de9d7878e24f075f0dc810eef03" alt="Profile Avatar" class="w-48 h-48 rounded-full object-cover shadow-lg ring-4 ring-white" />
+          <div class="flex flex-col gap-4 max-w-lg">
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#0b1c30]">
+              Welcome to My <span class="text-[#0051d5] italic font-normal">Digital Space</span>
+            </h1>
+            <p class="text-sm sm:text-base text-[#45464d]">Saya seorang desainer dan kreator yang menciptakan pengalaman digital yang bermakna. Jelajahi karya saya, terhubunglah dengan saya, dan temukan apa yang telah saya bangun.</p>
+            <div class="flex gap-3 justify-center md:justify-start mt-2">
+              <button onclick="showTab('links')" class="px-6 py-3 bg-black text-white rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-[#0051d5] transition-colors">View My Links →</button>
+              <button onclick="showTab('about')" class="px-6 py-3 bg-[#d3e4fe] text-[#0b1c30] rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-[#c6c6cd]/50 transition-colors">About Me</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Content -->
+      <div class="mt-12 w-full flex flex-col gap-6">
+        <div class="flex items-center gap-4">
+          <h2 class="text-xs font-semibold text-[#45464d] uppercase tracking-[0.2em]">Featured Content</h2>
+          <div class="h-[1px] flex-grow bg-[#c6c6cd]/30"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          
+          <div onclick="showTab('about')" class="cursor-pointer group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm hover:shadow-md border border-[#0b1c30]/5 transition-all flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-full bg-[#316bf3] text-white flex items-center justify-center">
+              <span class="material-symbols-outlined">design_services</span>
+            </div>
+            <div>
+              <h3 class="font-serif font-semibold text-xl text-[#0b1c30] mb-1">Design Portfolio</h3>
+              <p class="text-sm text-[#45464d]">A curated selection of my recent branding and product design projects.</p>
+            </div>
+          </div>
+          <div onclick="showTab('about')" class="cursor-pointer group relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm hover:shadow-md border border-[#0b1c30]/5 transition-all flex flex-col gap-3.5">
+            <div class="w-11 h-11 rounded-full bg-[#316bf3] text-white flex items-center justify-center">
+              <span class="material-symbols-outlined">edit_document</span>
+            </div>
+            <div>
+              <h3 class="font-serif font-semibold text-xl text-[#0b1c30] mb-1">Writing</h3>
+              <p class="text-sm text-[#45464d]">Thoughts on minimal design, digital wellbeing, and creative processes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="sec-about" class="page-section animate-fadeIn">
+      <div class="flex flex-col md:flex-row gap-8 items-start mb-12">
+        <div class="relative flex-shrink-0 mx-auto md:mx-0">
+          <img src="https://cdn.discordapp.com/attachments/1536269374518722621/1536269995355545680/IMG_3390.png?ex=6a7aca6d&is=6a7978ed&hm=1b6f6ee0b29701ca934fbf119d00ca8a6d888de9d7878e24f075f0dc810eef03" alt="Profile Avatar" class="w-48 h-48 rounded-2xl object-cover shadow-sm border border-[#0b1c30]/10" />
+          <div class="absolute -bottom-4 -right-4 w-12 h-12 rounded-full bg-[#d3e4fe] text-[#0051d5] flex items-center justify-center shadow-md font-bold text-2xl font-serif">
+            "
+          </div>
+        </div>
+        <div class="flex flex-col gap-4 flex-grow">
+          <h1 class="font-serif text-4xl font-bold text-[#0b1c30]">About Me</h1>
+          <p class="text-[#45464d] leading-relaxed mb-4">Halo, saya seorang kreator yang bersemangat dan berdedikasi untuk merangkai narasi melalui pengalaman digital. Dengan latar belakang yang berakar pada desain yang teliti dan pemikiran strategis, saya bertujuan untuk menjembatani kesenjangan antara keindahan estetika dan tujuan fungsional. Pendekatan saya berpusat pada "Kemewahan yang Tenang"—di mana kesederhanaan adalah kunci, dan setiap elemen memiliki tujuan yang berbeda.</p><p class="text-[#45464d] leading-relaxed mb-4">Selama bertahun-tahun, saya telah mengembangkan keahlian multidisiplin yang memungkinkan saya untuk melihat proyek secara holistik. Baik itu merancang identitas visual suatu merek atau mengembangkan antarmuka pengguna yang intuitif, saya percaya dalam menciptakan ruang digital yang terasa tenang, canggih, dan secara inheren dapat dipercaya.</p><p class="text-[#45464d] leading-relaxed mb-4">Saat tidak sedang sibuk dengan piksel dan kode, Anda dapat menemukan saya menjelajahi arsitektur modern, mengkurasi koleksi seni minimalis, atau mencari inspirasi dalam detail-detail halus kehidupan sehari-hari.</p>
+        </div>
+      </div>
+
+      <!-- Expertise Grid -->
+      <div class="w-full mt-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-8 h-[1px] bg-[#c6c6cd]"></div>
+          <h2 class="text-xs font-semibold text-[#45464d] uppercase tracking-[0.2em]">My Expertise</h2>
+          <div class="h-[1px] flex-grow bg-[#c6c6cd]/30"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          
+        <div class="p-6 rounded-2xl bg-[#eff4ff] border border-[#d3e4fe]/60 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#d3e4fe] text-[#0051d5] flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined">design_services</span>
+          </div>
+          <h3 class="font-serif font-semibold text-xl text-[#0b1c30]">Visual Design</h3>
+          <p class="text-sm text-[#45464d] leading-relaxed">Crafting bespoke, high-impact aesthetics focused on minimalism and structural elegance.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#eff4ff] border border-[#d3e4fe]/60 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#d3e4fe] text-[#0051d5] flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined">code</span>
+          </div>
+          <h3 class="font-serif font-semibold text-xl text-[#0b1c30]">UI Development</h3>
+          <p class="text-sm text-[#45464d] leading-relaxed">Translating refined designs into responsive, fluid, and accessible digital interfaces.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#eff4ff] border border-[#d3e4fe]/60 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#d3e4fe] text-[#0051d5] flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined">lightbulb</span>
+          </div>
+          <h3 class="font-serif font-semibold text-xl text-[#0b1c30]">Brand Strategy</h3>
+          <p class="text-sm text-[#45464d] leading-relaxed">Defining authoritative positioning and clear, trustworthy narratives for modern brands.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-[#eff4ff] border border-[#d3e4fe]/60 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#d3e4fe] text-[#0051d5] flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined">hub</span>
+          </div>
+          <h3 class="font-serif font-semibold text-xl text-[#0b1c30]">Systems Thinking</h3>
+          <p class="text-sm text-[#45464d] leading-relaxed">Building scalable design systems that maintain consistency across all touchpoints.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Section -->
+    <section id="sec-links" class="page-section animate-fadeIn text-center">
+      <h1 class="font-serif text-4xl font-bold text-[#0b1c30] mb-2">Connect With Me</h1>
+      <p class="text-sm text-[#45464d] mb-6">Explore my creative world across the web.</p>
+      <div class="flex flex-col gap-3.5 max-w-[580px] mx-auto">
+        
+        <a href="https://www.instagram.com/deririzz?igsh=MTdlZ3M2eDNscGNheA%3D%3D&utm_source=qr" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">photo_camera</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">Instagram</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://lynk.id/arutala_32" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-black text-white shadow-md hover:bg-[#131b2e] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10">
+              <span class="material-symbols-outlined text-white">language</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">ARUTANJANA STUDIO</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://discord.gg/UjvsdGjp6N" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">forum</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">Discord</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://www.linkedin.com/in/deririzkyip?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">work</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">LinkedIn</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://youtube.com/@closethekos?si=JU9wCnj0vkQn0puE" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">smart_display</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">YouTube</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://dribbble.com" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">palette</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">Portfolio</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://ashasadhana.my.id" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-white text-[#0b1c30] shadow-sm border border-[#0b1c30]/5 hover:bg-[#eff4ff] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#316bf3]/10">
+              <span class="material-symbols-outlined text-[#0051d5]">link</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">ASHA SADHANA</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="https://www.instagram.com/ashasadhana.id?igsh=dDg4MWtoOWNoemJn" target="_blank" class="flex items-center justify-between p-4 rounded-xl bg-black text-white shadow-md hover:bg-[#131b2e] transition-all">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-white/10">
+              <span class="material-symbols-outlined text-white">link</span>
+            </div>
+            <span class="font-serif font-semibold text-lg">INSTAGRAM - ASHA SADHANA</span>
+          </div>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-xs text-[#45464d] border-t border-[#c6c6cd]/20 mt-auto bg-[#eff4ff]">
+    © 2026 Asha Sadhana. All rights reserved.
+  </footer>
+
+  <!-- Single File Interactive Script -->
+  <script>
+    function showTab(tabName) {
+      document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+      const activeSection = document.getElementById('sec-' + tabName);
+      if (activeSection) activeSection.classList.add('active');
+
+      ['home', 'about', 'links'].forEach(t => {
+        const navBtn = document.getElementById('nav-' + t);
+        if (navBtn) {
+          if (t === tabName) {
+            navBtn.className = "text-xs font-semibold text-[#0051d5] underline underline-offset-8";
+          } else {
+            navBtn.className = "text-xs font-semibold text-[#45464d] hover:text-[#0b1c30]";
+          }
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Check hash on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'about' || hash === 'about-me') showTab('about');
+      else if (hash === 'links') showTab('links');
+      else showTab('home');
+    });
+  </script>
+</body>
+</html>
